@@ -1,0 +1,295 @@
+.covid-chart {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding: 50px 0;
+    .search-bar {
+        margin-bottom: 50px;
+        h2 {
+            color: getColor(accent);
+            font-family: getFont(ui);
+            font-size: 24px;
+            @include dekstop {
+                font-size: 48px;
+            }
+        }
+        .search-input {
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            input {
+                border-radius: 20px 0 0 20px;
+                width: 65%;
+                height: 40px;
+                padding: 0;
+                padding-left: 20px;
+                background: getColor(secondary);
+                color: getColor(primary);
+                outline: none;
+                border: none;
+                font-family: getFont(ui);
+                font-size: 18px;
+                @include tablet {
+                    padding-left: 20px;
+                    font-size: 24px;
+                    width: 300px;
+                }
+                @include dekstop {
+                    border-radius: 40px 0 0 40px;
+                    width: 370px;
+                    height: 50px;
+                    font-size: 30px;
+                    padding-left: 30px;
+                }
+            }
+            button {
+                border-radius: 0 20px 20px 0;
+                cursor: pointer;
+                background: getColor(secondary);
+                border: none;
+                outline: none;
+                padding: 0;
+                height: 40px;
+                padding-right: 20px;
+                @include tablet {
+                    padding-right: 20px;
+                }
+                @include dekstop {
+                    padding-right: 30px;
+                    height: 50px;
+                    border-radius: 0 40px 40px 0;
+                    width: 50px;
+                }
+            }
+        }
+        .autocomplete.revealAutoComplete {
+            visibility: visible;
+            transform: translate(-50%,5px);
+            opacity: 1;
+        };
+        .autocomplete {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            text-align: left;
+            width: 70%;
+            height: fit-content;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background: getColor(secondary);
+            color: getColor(primary);
+            font-family: getFont(ui);
+            border-radius: 20px;
+            transform: translateX(-50%);
+            transition: 0.2s all;
+            z-index: 9;
+            @include dekstop {
+                width: 370px;
+                font-size: 30px;
+            }
+            @include tablet {
+                width: 300px;
+            }
+            .country {
+                width: 90%;
+                padding: 10px 0;
+                cursor: pointer;
+                padding-left: 10%;
+                &:hover {
+                    border-radius: 20px;
+                    background: getColor(primary);
+                    color: getColor(accent);
+                }
+            }
+        }
+    }
+    main {
+        margin: auto;
+        width: 98%;
+        background: #295E6A;
+        box-shadow: inset -5px -5px 10px #2F6C7A, inset 5px 5px 10px #23505A;
+        border-radius: 40px;
+        padding: 20px 0;
+        @include tablet {
+            width: 90%;
+            padding: 30px 0;
+        }
+        @include dekstop {
+            width: 75%;
+            padding: 40px 0;
+        }
+        h2 {
+            margin: auto;
+            margin-top: 20px;
+            font-size: 8.696vw;
+            font-family: getFont(ui);
+            color: getColor(secondary);
+            font-weight: normal;
+            margin-bottom: 2.463vh;
+            width: 80%;
+            @include tablet {
+                font-size: 48px;
+                margin-bottom: 40px;
+            }
+            @include dekstop {
+                font-size: 48px;
+                margin-bottom: 40px;
+            }
+        }
+        .chart {
+            filter: contrast(120%);
+            text-align: center;
+            margin: auto;
+            background: getColor(primary);
+            padding-top: 4.831vw;
+            padding-right: 1.208vw;
+            padding-left: 0.604vw;
+            border-radius: 20px;
+            height: 43.478vw;
+            width: 86.957vw;
+            min-height: 100px;
+            min-width: 200px;
+            @include tablet {
+                border-radius: 40px;
+                width: 68.359vw;
+                height: 34.180vw;
+                box-shadow: 
+                5px 5px 10px #23505A, 
+                -5px -5px 10px #2F6C7A;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @include dekstop {
+                border-radius: 40px;
+                height: 44.444vh;
+                width: 88.888vh;
+                box-shadow: 
+                5px 5px 10px #23505A, 
+                -5px -5px 10px #2F6C7A;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                padding-left: 40px;
+                padding-right: 40px;
+                &:hover {
+                    box-shadow: 
+                    inset 5px 5px 10px #23505A, 
+                    inset -5px -5px 10px #2F6C7A;
+                    transform: translateY(10px)
+                }
+            }
+            canvas {
+                margin: auto;
+            }
+        }
+        .legend-group {
+            margin: auto;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 80px;
+            background: getColor(primary);
+            filter: contrast(120%);
+            box-shadow: -5px -5px 10px #2F6C7A, 5px 5px 10px #23505A;
+            border-radius: 40px;
+            width: 70%;
+            padding: 4.831vw;
+            grid-row-gap: 2.463vh;
+            @include tablet {
+                grid-row-gap: 40px;
+                width: 400px;
+                padding: 20px;
+            }
+            @include dekstop {
+                grid-row-gap: 40px;
+                width: 500px;
+                padding: 20px;
+                &:hover {
+                    box-shadow: 
+                    inset 5px 5px 10px #23505A, 
+                    inset -5px -5px 10px #2F6C7A;
+                    transform: translateY(10px)
+                }
+            }
+            .legend {
+                color: getColor(secondary);
+                font-weight: normal;
+                &:nth-child(1) {
+                    h4{
+                        &:nth-child(1) {
+                            color: #A6CEE3;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    h4{
+                        &:nth-child(1) {
+                            color: #F49292;
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    h4{
+                        &:nth-child(1) {
+                            color: #FCE850;
+                        }
+                    }
+                }
+                &:nth-child(4) {
+                    h4{
+                        &:nth-child(1) {
+                            color: #83E85A;
+                        }
+                    }
+                }
+                &:nth-child(5) {
+                    h4{
+                        &:nth-child(1) {
+                            margin: auto;
+                            width: fit-content;
+                            padding: 10px;
+                            border-radius: 20px;
+                            background: getColor(danger);
+                            color: black;
+                        }
+                    }
+                }
+                &:nth-child(6) {
+                    h4{
+                        &:nth-child(1) {
+                            margin: auto;
+                            width: fit-content;
+                            padding: 10px;
+                            border-radius: 20px;
+                            background: getColor(success);
+                            color: black;
+                        }
+                    }
+                }
+                h4 {
+                    font-family: getFont(ui);
+                    font-weight: normal;
+                    font-size: 4.348vw;
+                    margin: 10px 0;
+                    &:nth-child(1) {
+                        font-size: 5.797vw;
+                    }
+                    @include tablet {
+                        font-size: 24px;
+                        &:nth-child(1) {
+                            font-size: 36px;
+                        } 
+                    }
+                    @include dekstop {
+                        font-size: 24px;
+                        &:nth-child(1) {
+                            font-size: 36px;
+                        } 
+                    }
+                }
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+
+@import "./base/variables";
+@import "./base/responsives";
+
+@import "./layout/topnav";
+@import "./layout/header";
+@import "./layout/covid-chart";
+@import "./layout/covid-statistic";
+@import "./layout/footer";
+
+html,body {
+    background: getColor(primary);
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 1;
+}
+
+.block {
+    display: block;
+}

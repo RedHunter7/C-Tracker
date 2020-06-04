@@ -1,0 +1,102 @@
+nav {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    background: getColor(primary);
+    width: 95%;
+    height: fit-content;
+    padding: 2.5%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 20px 20px;
+    transition: 0.5s;
+    @include dekstop {
+        background: transparent;
+        border-radius: 0px 0px 40px 40px;
+        box-shadow: none;
+    }
+    .logo {
+        font-family: getFont(logo);
+        font-size: 6.650vh;
+        text-align: center;
+        @include tablet {
+            font-size: 54px;
+        }
+        @include dekstop {
+            float: left;
+            font-size: 36px;
+        }
+        a {
+            text-decoration: none;
+            color: getColor(secondary);
+        }
+    }
+    .menu {
+        height: 0;
+        visibility: hidden;
+        transition: height 0.4s ease-out;
+        @include dekstop {
+            float: right;
+            height: fit-content;
+            visibility: visible;
+            display: flex;
+        }
+        a {
+            display: block;
+            color: getColor(tertiary);
+            font-size: 8.696vw;
+            text-decoration: none;
+            text-align: center;
+            margin: 5px 0;
+            @include tablet {
+                font-size: 48px;
+            }
+            @include dekstop {
+                font-size: 24px;
+                margin-left: 20px;
+                margin-right: 20px;
+                transition: 1s;
+                &:hover {
+                   opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    .menu.showMenu {
+        visibility: visible;
+        height: 24.155vw;
+        @include tablet {
+            margin: 20px 0;
+            height: 120px;
+        } 
+        a {
+            @include tablet {
+                margin: 10px 0;
+            }
+        }
+    }
+    .slide-btn {
+        text-align: center;
+        @include dekstop {
+            display: none;
+        }
+        a {
+            font-size: 6.650vh;
+            transition: transform 0.4s;
+            color: getColor(secondary);
+            text-decoration: none;
+            @include tablet {
+                font-size: 54px;
+            }
+        }
+
+        a.showMenu {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+nav.onScroll {
+    background: getColor(primary);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

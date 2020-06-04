@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#header">C-Tracker</a>
+        </div>
+        <div class="menu" id="menu">
+            <a href="#covid-chart">Chart</a>
+            <a href="#covid-statistic">Statistic</a>
+        </div>
+        <div class="slide-btn">
+            <a href="javascript:void(0);" id="arrowBtn" class='fas'>&#xf078;</a>
+        </div>
+    </nav>
+    <header id="header">
+        <div class="background"></div>
+        <main>
+            <h2>COVID-19 PANDEMIC</h2>
+            <div class="total-case">
+                <h4>Total Case</h4>
+                <h4 id="total-case"></h4>
+            </div>
+            <div class="death">
+                <h4>Death</h4>
+                <h4 id="death">325,155</h4>
+            </div>
+            <div class="recovered">
+                <h4>Recovered</h4>
+                <h4 id="recovered">325,218</h4>
+            </div>
+        </main>
+    </header>
+    <div class="covid-chart" id="covid-chart">
+        <div class="search-bar">
+            <h2>Search your country</h2>
+            <div class="search-input">
+                <input type="text" name="" id="search" spellcheck="false" autocomplete="off" placeholder="China, Singapore....">
+                <button id="searchBtn"><i style='font-size:24px' class='fas'>&#xf002;</i></button>
+            </div>
+            <div class="autocomplete" id="autocomplete">
+            </div>
+        </div>
+        <div class="country-data" id='country-data'></div>
+        <main>
+            <h2 id='country-title'>Covid Chart</h2>
+            <div class="chart">
+                <canvas id='chart'></canvas>
+            </div>
+            <div class="legend-group">
+                <div class="legend">
+                    <h4 id='country-total-case'>200000</h4>
+                    <h4>Total Case</h4>
+                </div>
+                <div class="legend">
+                    <h4 id='country-death'>200000</h4>
+                    <h4>Death</h4>
+                </div>
+                <div class="legend">
+                    <h4 id='country-active-case'>200000</h4>
+                    <h4>Active Case</h4>
+                </div>
+                <div class="legend">
+                    <h4 id='country-recovered'>200000</h4>
+                    <h4>Recovered</h4>
+                </div>
+                <div class="legend">
+                    <h4 id='country-mortality-rate'>20%</h4>
+                    <h4>Mortality Rate</h4>
+                </div>
+                <div class="legend">
+                    <h4 id='country-recovery-rate'>20%</h4>
+                    <h4>Recovery Rate</h4>
+                </div>
+            </div>
+        </main>
+    </div>
+    <covid-statistic id="covid-statistic"></covid-statistic>
+    <footer>
+        <div class="logo">C-Tracker</div>
+        <div class="footer-row"><a href="https://api.covid19api.com/">https://api.covid19api.com/</a></div>
+        <div class="footer-row" id="version">Version 0.0.8</div>
+    </footer>
+</body>
+</html>

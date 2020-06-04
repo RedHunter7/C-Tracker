@@ -1,0 +1,11 @@
+@mixin dekstop {
+    @media (min-width: 1024px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 600px) and (orientation: portrait) {
+        @content;
+    }
+}

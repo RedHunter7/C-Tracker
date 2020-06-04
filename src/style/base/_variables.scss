@@ -1,0 +1,22 @@
+$colors : (
+    primary: #295E6A,
+    secondary: #DFEFF0,
+    tertiary: #F6F6F6,
+    accent: #c2faf1,
+    warning: #F7B32D,
+    danger: #F46188,
+    success: #9BCB3C
+);
+
+@function getColor($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+$fonts : (
+    logo : 'Poppins',
+    ui: 'Lucida Sans'
+);
+
+@function getFont($font-name) {
+    @return map-get($fonts, $font-name);
+}
