@@ -22,10 +22,10 @@ const summary = () => {
       const countriesData = result.Countries;
       console.log(countriesData);
       renderTable(countriesData);
-      clearInterval(summary)
+      clearTimeout(summary);
   })
   .catch(error => {
-    setInterval(summary,3000);
+    setTimeout(summary,3000);
     console.log('error', error);
   } );
 }
