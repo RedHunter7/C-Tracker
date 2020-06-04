@@ -8,7 +8,8 @@ let requestOptions = {
   
 const baseUrl = 'https://api.covid19api.com';
 
-fetch(`${baseUrl}/summary`, requestOptions)
+const summary = () => {
+  fetch(`${baseUrl}/summary`, requestOptions)
   .then(response => response.json())
   .then(result => {
       const totalCase = moneyFormat(result.Global.TotalConfirmed);
@@ -21,8 +22,15 @@ fetch(`${baseUrl}/summary`, requestOptions)
       const countriesData = result.Countries;
       console.log(countriesData);
       renderTable(countriesData);
+      clearInterval(summary)
   })
-  .catch(error => console.log('error', error));
+  .catch(error => {
+    setInterval(summary,3000);
+    console.log('error', error);
+  } );
+}
+
+summary();
 
 fetch(`${baseUrl}/countries`, requestOptions)
   .then(response => response.json())
