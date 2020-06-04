@@ -10,7 +10,7 @@
   },
   "author": "Adli",
   "license": "ISC",
-  "homepage": "https://redhunter7.github.io/C-Tracker",
+  "homepage": "C-Tracker.com",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
