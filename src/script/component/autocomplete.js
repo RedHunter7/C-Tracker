@@ -10,6 +10,7 @@ const renderAutoComplete = (countryName) => {
       console.log(country);
       autoComplete.innerHTML = country;
       const countryGroup = document.getElementsByClassName('country');
+      const search = document.getElementById('search');
       for(let x in countryGroup) {
         countryGroup[x].addEventListener('click', () => {
           search.value = countryGroup[x].innerText;

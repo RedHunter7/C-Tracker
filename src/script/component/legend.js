@@ -1,19 +1,19 @@
 import moneyFormat from '../function/money-format.js'
 
 const renderLegend = (totalConfirmedCase,totalDeath,totalRecovered,activeCase,countryName) => {
-    let ConfirmedCase = document.getElementById('country-total-case');
-    let Death = document.getElementById('country-death');
-    let Recovered = document.getElementById('country-recovered');
-    let Case = document.getElementById('country-active-case');
-    let CountryName = document.getElementById('country-title');
+    let confirmedCase = document.getElementById('country-total-case');
+    let death = document.getElementById('country-death');
+    let recovered = document.getElementById('country-recovered');
+    let active = document.getElementById('country-active-case');
+    let name = document.getElementById('country-title');
     let mortalityRate = document.getElementById('country-mortality-rate');
     let recoveryRate = document.getElementById('country-recovery-rate');
   
-    ConfirmedCase.innerText = moneyFormat(totalConfirmedCase);
-    Death.innerText = moneyFormat(totalDeath);
-    Recovered.innerText = moneyFormat(totalRecovered);
-    Case.innerText = moneyFormat(activeCase);
-    CountryName.innerText = countryName;
+    confirmedCase.innerText = moneyFormat(totalConfirmedCase);
+    death.innerText = moneyFormat(totalDeath);
+    recovered.innerText = moneyFormat(totalRecovered);
+    active.innerText = moneyFormat(activeCase);
+    name.innerText = countryName;
 
     let mr = parseFloat(totalDeath)*100/parseFloat(totalConfirmedCase);
     mr = mr.toPrecision(3);

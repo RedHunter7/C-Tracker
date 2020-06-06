@@ -8,8 +8,8 @@ const searchCountry = (searchValue, onSearch=false) => {
     });
     let countryName = [];
     console.log(matches.length)
-    if (onSearch == true) {
-      if (matches.length == 0) {
+    if (onSearch === true) {
+      if (matches.length === 0) {
         getCountryData(searchValue,false)
       } else {
         getCountryData(matches[0].Slug); 
